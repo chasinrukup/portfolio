@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #0a0a0b;
+    --bg-elevated: #131316;
+    --fg-primary: #f5f2eb;
+    --fg-muted: #8a8a93;
+    --fg-dim: #5a5a63;
+    --accent: #e5654f;
+    --accent-dim: #b84e3c;
+    --border-hairline: #1f1f23;
+  }
+
+  html {
+    background-color: var(--bg-base);
+    color: var(--fg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--fg-primary);
+    min-height: 100vh;
+    font-family: var(--font-body), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--bg-base);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 180px 180px;
+  }
+
+  .hairline {
+    height: 1px;
+    background-color: var(--border-hairline);
+    width: 100%;
+  }
+
+  .v-hairline {
+    width: 1px;
+    background-color: var(--border-hairline);
+    height: 100%;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .gradient-mask-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .accent-underline {
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .accent-underline:hover {
+    background-size: 100% 2px;
+  }
+
+  .num-tab {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .glow-radial {
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(229, 101, 79, 0.08) 0%,
+      transparent 60%
+    );
+  }
+
+  /* Duotone photograph treatment: photo becomes black + accent, with a printed feel */
+  .duotone {
+    filter: grayscale(1) contrast(1.18) brightness(0.78);
+  }
+
+  /* Halftone overlay layer: a tiny radial-dot grid on top of an image makes it
+     read like a newspaper print, not a photograph. */
+  .halftone-mask {
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 75%);
+    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 75%);
+    -webkit-mask-size: 4px 4px;
+    mask-size: 4px 4px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+  }
+
+  .halftone-dots-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.55;
+    background-image: radial-gradient(rgba(10, 10, 11, 0.95) 1.1px, transparent 1.4px);
+    background-size: 4px 4px;
+  }
+
+  .vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(10, 10, 11, 0.92) 95%
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .draw-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) var(--rail-progress, 0%), var(--border-hairline) var(--rail-progress, 0%), var(--border-hairline) 100%);
+    transition: background 0.05s linear;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth scroll baseline (Lenis enhances this on the client) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
