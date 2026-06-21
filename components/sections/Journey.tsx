@@ -106,8 +106,16 @@ export default function Journey() {
           return (
             <li
               key={m.id}
-              className="grid grid-cols-1 items-center gap-4 py-4 lg:grid-cols-12 lg:gap-x-0 lg:py-5"
+              className="grid grid-cols-1 items-center gap-3 py-5 lg:grid-cols-12 lg:gap-x-0 lg:gap-y-4 lg:py-5"
             >
+              {/* Mobile: year above card (hidden on lg) */}
+              <div className="flex items-center gap-3 lg:hidden">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim num-tab">
+                  {m.year}
+                </span>
+                <span className="h-px flex-1 bg-ink-hairline" />
+              </div>
+
               {/* Left card slot */}
               <div className="lg:col-span-5">
                 {isLeft ? (
@@ -117,7 +125,7 @@ export default function Journey() {
                 )}
               </div>
 
-              {/* Center: year + dot + connector */}
+              {/* Center: year + dot + connector (desktop only) */}
               <div className="hidden lg:col-span-2 lg:flex lg:flex-col lg:items-center lg:gap-2 lg:py-2">
                 <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper-dim">
                   {m.year}
@@ -154,14 +162,6 @@ export default function Journey() {
                 ) : (
                   <div className="hidden lg:block" />
                 )}
-              </div>
-
-              {/* Mobile: year above card */}
-              <div className="flex items-center gap-3 lg:hidden">
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper-dim">
-                  {m.year}
-                </span>
-                <span className="h-px flex-1 bg-ink-hairline" />
               </div>
             </li>
           );

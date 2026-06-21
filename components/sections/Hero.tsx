@@ -99,7 +99,7 @@ export default function Hero() {
       {/* Layer 2: typography */}
       <motion.div
         style={{ y: nameY, opacity: nameOpacity }}
-        className="relative z-10 flex min-h-[110svh] flex-col justify-between px-6 pb-12 pt-28 sm:px-10 sm:pb-16 sm:pt-32 lg:px-20"
+        className="relative z-10 flex min-h-[110svh] flex-col justify-between px-5 pb-10 pt-24 sm:px-10 sm:pb-16 sm:pt-32 lg:px-20"
       >
         {/* Top mono strip */}
         <motion.div
@@ -152,7 +152,7 @@ export default function Hero() {
             className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12"
           >
             <div className="col-span-12 lg:col-span-8">
-              <p className="max-w-[24ch] font-serif text-[28px] italic leading-[1.18] text-paper text-balance sm:text-[36px] lg:text-[44px]">
+              <p className="max-w-[24ch] font-serif italic leading-[1.18] text-paper text-balance text-[clamp(1.55rem,5.5vw,2.75rem)]">
                 {site.tagline}
               </p>
               <p className="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-paper-muted">

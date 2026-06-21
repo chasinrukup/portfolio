@@ -75,9 +75,10 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="mt-24 flex flex-wrap items-center justify-between gap-y-3 border-t border-ink-hairline pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim">
+      <footer className="mt-24 flex flex-col gap-3 border-t border-ink-hairline pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Sachin Kurup</span>
-        <span>Designed & built in Bangalore · Set in Instrument Serif & Inter</span>
+        <span className="hidden sm:inline">Designed & built in Bangalore · Set in Instrument Serif & Inter</span>
+        <span className="sm:hidden">Bangalore · Instrument Serif & Inter</span>
         <a href="#hero" className="text-paper-muted hover:text-paper">
           ↑ Back to top
         </a>
