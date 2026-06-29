@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative px-6 py-28 sm:px-10 sm:py-36 lg:px-20"
+      className="relative px-6 py-20 sm:px-10 sm:py-24 lg:px-20"
     >
       <SectionHeader number="08" label="Contact" kicker="Direct lines" />
 
@@ -75,10 +75,8 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="mt-24 flex flex-col gap-3 border-t border-ink-hairline pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+      <footer className="mt-24 flex items-center justify-between gap-3 border-t border-ink-hairline pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim">
         <span>© {new Date().getFullYear()} Sachin Kurup</span>
-        <span className="hidden sm:inline">Designed & built in Bangalore · Set in Instrument Serif & Inter</span>
-        <span className="sm:hidden">Bangalore · Instrument Serif & Inter</span>
         <a href="#hero" className="text-paper-muted hover:text-paper">
           ↑ Back to top
         </a>

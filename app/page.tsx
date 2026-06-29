@@ -52,7 +52,6 @@ export default function Home() {
           number="∞"
           kicker="Aside"
           text="Most agents look impressive in a demo because the demo is the test set. The work I care about is what happens on Monday morning, when the same system has to answer a question nobody anticipated, in a language nobody benchmarked, on a decision that contradicts the one it remembered."
-          attribution="Notebook, 2026"
         />
       </SectionFocus>
 

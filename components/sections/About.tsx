@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative px-6 py-28 sm:px-10 sm:py-36 lg:px-20"
+      className="relative px-6 py-20 sm:px-10 sm:py-24 lg:px-20"
       aria-labelledby="about-heading"
     >
       <SectionHeader number="01" label="Position" kicker="About" />
@@ -71,9 +71,10 @@ export default function About() {
               </div>
               <blockquote className="mt-1 font-serif text-2xl italic leading-[1.3] text-paper text-balance sm:text-[26px]">
                 {about.pullQuote}
+                <span aria-hidden className="text-accent/60">&rdquo;</span>
               </blockquote>
               <figcaption className="mt-5 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim">
-                From "When Retrieval Hurts" · ACL 2026 MeLLMs
+                From &ldquo;When Retrieval Hurts&rdquo; · ACL 2026 MeLLMs
               </figcaption>
             </figure>
           </RevealOnScroll>

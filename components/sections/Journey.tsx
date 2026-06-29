@@ -1,9 +1,49 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { milestones } from "@/content/timeline";
 import SectionHeader from "../ui/SectionHeader";
+
+function MilestoneDot({ reduce }: { reduce: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Ring pops at viewport center (~0.5 progress) and recedes at edges.
+  const ringScale = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.5, 0.65, 1],
+    reduce ? [1, 1, 1, 1, 1] : [1, 1.4, 2.4, 1.4, 1]
+  );
+  const ringOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.5, 0.65, 1],
+    reduce ? [0, 0, 0, 0, 0] : [0, 0.25, 0.7, 0.25, 0]
+  );
+  const dotScale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    reduce ? [1, 1, 1] : [0.85, 1.15, 0.85]
+  );
+
+  return (
+    <div ref={ref} className="relative">
+      <motion.span
+        style={{ scale: dotScale }}
+        className="block h-3 w-3 rounded-full bg-accent"
+      />
+      <motion.span
+        style={{ scale: ringScale, opacity: ringOpacity }}
+        className="absolute inset-0 rounded-full bg-accent"
+        aria-hidden
+      />
+    </div>
+  );
+}
 
 const kindLabel: Record<(typeof milestones)[number]["kind"], string> = {
   education: "Education",
@@ -88,7 +128,7 @@ export default function Journey() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="journey" className="relative px-6 py-28 sm:px-10 sm:py-36 lg:px-20">
+    <section id="journey" className="relative px-6 py-20 sm:px-10 sm:py-24 lg:px-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -130,26 +170,7 @@ export default function Journey() {
                 <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper-dim">
                   {m.year}
                 </span>
-                <motion.div
-                  initial={{ scale: reduce ? 1 : 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: false, amount: 0.5 }}
-                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-                  className="relative"
-                >
-                  <span className="block h-3 w-3 rounded-full bg-accent" />
-                  <motion.span
-                    initial={{ scale: 1, opacity: 0.6 }}
-                    animate={{ scale: 2.4, opacity: 0 }}
-                    transition={{
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "easeOut",
-                      delay: i * 0.18,
-                    }}
-                    className="absolute inset-0 rounded-full bg-accent"
-                  />
-                </motion.div>
+                <MilestoneDot reduce={!!reduce} />
                 {i < milestones.length - 1 && (
                   <div className="mt-2 h-10 w-px bg-ink-hairline" />
                 )}

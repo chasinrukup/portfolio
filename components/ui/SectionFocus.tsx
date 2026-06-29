@@ -16,8 +16,8 @@ export default function SectionFocus({ children }: { children: React.ReactNode }
   // Bright while the section occupies the viewport; dim when entering or leaving
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.12, 0.25, 0.75, 0.88, 1],
-    [0.25, 0.25, 1, 1, 0.25, 0.25]
+    [0, 0.06, 0.14, 0.86, 0.94, 1],
+    [0.45, 0.7, 1, 1, 0.7, 0.45]
   );
 
   if (reduce) return <div>{children}</div>;

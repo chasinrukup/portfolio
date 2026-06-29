@@ -17,7 +17,7 @@ export default function Publications() {
   return (
     <section
       id="publications"
-      className="relative px-6 py-28 sm:px-10 sm:py-36 lg:px-20"
+      className="relative px-6 py-20 sm:px-10 sm:py-24 lg:px-20"
     >
       <SectionHeader
         number="04"

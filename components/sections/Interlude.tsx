@@ -7,10 +7,16 @@ type Props = {
   number: string;
   kicker: string;
   text: string;
-  attribution?: string;
 };
 
-export default function Interlude({ number, kicker, text, attribution }: Props) {
+function splitIntoClauses(text: string): string[] {
+  // Split on sentence-ending punctuation OR commas, keeping the delimiter on the preceding clause.
+  // Result is an array of "lines" that read naturally one at a time.
+  const parts = text.split(/(?<=[,.])\s+/);
+  return parts.filter((p) => p.trim().length > 0);
+}
+
+export default function Interlude({ number, kicker, text }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
@@ -19,14 +25,13 @@ export default function Interlude({ number, kicker, text, attribution }: Props) 
     offset: ["start end", "end start"],
   });
 
-  // Word-by-word reveal indexed by scroll progress
-  const words = text.split(/\s+/);
-  const stops = words.map((_, i) => i / Math.max(1, words.length - 1));
+  const clauses = splitIntoClauses(text);
+  const count = clauses.length;
 
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[80svh] items-center px-6 py-24 sm:px-10 sm:py-36 lg:px-20"
+      className="relative flex min-h-[80svh] items-center px-6 py-20 sm:px-10 sm:py-24 lg:px-20"
       aria-label={kicker}
     >
       <div className="grid w-full grid-cols-12 gap-x-8">
@@ -42,72 +47,66 @@ export default function Interlude({ number, kicker, text, attribution }: Props) 
             className="font-serif text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-paper-muted text-balance"
             aria-label={text}
           >
-            {words.map((w, i) => {
-              const start = stops[i];
-              const end = Math.min(1, start + 0.06);
-              return (
-                <WordReveal
-                  key={i}
-                  word={w}
-                  start={start}
-                  end={end}
-                  scrollYProgress={scrollYProgress}
-                  reduce={!!reduce}
-                />
-              );
-            })}
+            {clauses.map((clause, i) => (
+              <ClauseReveal
+                key={i}
+                clause={clause}
+                index={i}
+                count={count}
+                scrollYProgress={scrollYProgress}
+                reduce={!!reduce}
+                isLast={i === count - 1}
+              />
+            ))}
           </p>
-
-          {attribution ? (
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mt-10 font-mono text-[10px] uppercase tracking-[0.22em] text-paper-dim"
-            >
-              {attribution}
-            </motion.p>
-          ) : null}
         </div>
       </div>
     </section>
   );
 }
 
-function WordReveal({
-  word,
-  start,
-  end,
+function ClauseReveal({
+  clause,
+  index,
+  count,
   scrollYProgress,
   reduce,
+  isLast,
 }: {
-  word: string;
-  start: number;
-  end: number;
+  clause: string;
+  index: number;
+  count: number;
   scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
   reduce: boolean;
+  isLast: boolean;
 }) {
-  // Map [0..1] of the section's scroll into [0..1] of this word's reveal window.
-  // We start the reveal a bit into the section so the text isn't already done when it enters.
-  const offset = 0.25;
+  // Reveal each clause across [0.2, 0.75] of the section's scroll progress,
+  // staggered so each line lights up as the reader reaches it.
+  const offset = 0.2;
   const span = 0.55;
-  const a = offset + start * span;
-  const b = offset + end * span;
+  const slice = span / count;
+  const a = offset + index * slice;
+  const b = a + slice * 0.7; // overlap a little for smoothness
 
   const color = useTransform(
     scrollYProgress,
-    [a, b],
-    ["rgba(245,242,235,0.16)", "rgba(245,242,235,1)"]
+    [a, Math.min(1, b)],
+    ["rgba(245,242,235,0.18)", "rgba(245,242,235,1)"]
   );
 
   if (reduce) {
-    return <span className="text-paper">{word}{" "}</span>;
+    return (
+      <span className="text-paper">
+        {clause}
+        {isLast ? "" : " "}
+      </span>
+    );
   }
 
   return (
     <motion.span style={{ color }} className="inline">
-      {word}{" "}
+      {clause}
+      {isLast ? "" : " "}
     </motion.span>
   );
 }
