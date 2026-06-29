@@ -13,6 +13,7 @@ import Now from "@/components/sections/Now";
 import Contact from "@/components/sections/Contact";
 import Interlude from "@/components/sections/Interlude";
 import TopicIndex from "@/components/sections/TopicIndex";
+import ChatLauncher from "@/components/chat/ChatLauncher";
 
 const RESEARCH_TOPICS = [
   "Multi-agent systems",
@@ -60,6 +61,8 @@ export default function Home() {
       <SectionFocus><Toolkit /></SectionFocus>
       <SectionFocus><Now /></SectionFocus>
       <SectionFocus><Contact /></SectionFocus>
+
+      <ChatLauncher />
     </main>
   );
 }

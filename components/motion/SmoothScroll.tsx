@@ -14,6 +14,7 @@ export default function SmoothScroll() {
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
     });
+    (window as unknown as { lenis?: Lenis }).lenis = lenis;
 
     let raf = 0;
     const tick = (time: number) => {
@@ -25,6 +26,7 @@ export default function SmoothScroll() {
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
+      delete (window as unknown as { lenis?: Lenis }).lenis;
     };
   }, []);
 
