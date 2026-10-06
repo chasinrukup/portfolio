@@ -33,7 +33,7 @@ export default async function OG() {
             color: "#8A8A93",
           }}
         >
-          <span>Sachin Kurup · CS '26</span>
+          <span>Sachin Kurup · PhD 2027</span>
           <span>Vol. 01 · 26.06</span>
         </div>
 

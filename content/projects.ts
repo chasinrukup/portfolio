@@ -15,75 +15,122 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "decision-intelligence",
+    id: "quantum-error-correction",
     number: "01",
+    title: "AI Pipeline for Quantum Error Correction",
+    org: "Amrita CCSN · MeitY-funded",
+    role: "Quantum Project Engineer",
+    period: "Oct 2026 – Present",
+    status: "Research",
+    problem:
+      "Error correction on superconducting qubits is hard to keep optimised as device noise shifts over time.",
+    approach:
+      "Building an AI pipeline for the Quantum Error Correction Appliance on the Rudra Server. It takes syndrome data from the readout and extraction stages and runs noise estimation, syndrome processing, an adaptive decoder, error prediction, and correction optimisation, passing decisions back to the control electronics.",
+    outcome: "In progress. Funded by MeitY (Ministry of Electronics and Information Technology).",
+    stack: ["Python", "Quantum Error Correction", "Adaptive Decoding", "Superconducting Qubits"],
+  },
+  {
+    id: "clinical-protocol-agents",
+    number: "02",
+    title: "Agentic Clinical-Protocol Workflows",
+    org: "Prevalence Health (Embrace Ventures)",
+    role: "Research Intern",
+    period: "Jul 2026 – Present",
+    status: "Research",
+    problem:
+      "Clinics running structured studies often lack the infrastructure to operationalise protocols consistently at scale.",
+    approach:
+      "Building agentic workflows and systems that translate clinical study protocols into reliable, repeatable clinic operations, working directly with the organisation's clinical and research leadership.",
+    outcome:
+      "In progress. Aimed at reducing protocol-deviation errors and freeing clinical staff time for patient care.",
+    stack: ["LLM Agents", "Workflow Automation", "Human Oversight"],
+  },
+  {
+    id: "agentic-education",
+    number: "03",
+    title: "Agentic Educational Platform",
+    org: "SeedlingLabs",
+    role: "Co-developer",
+    period: "Jan 2026 – Jun 2026",
+    status: "Production",
+    problem:
+      "Manual grading, question-paper creation, and lesson planning consume significant instructor time at scale.",
+    approach:
+      "Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning (system design, prompting, and backend integration).",
+    outcome:
+      "Deployed across partner institutions, reducing manual workload for instructors and administrators.",
+    stack: ["LLM Agents", "Prompt Engineering", "Backend Integration"],
+  },
+  {
+    id: "decision-intelligence",
+    number: "04",
     title: "Decision Intelligence Agent",
     org: "SeedlingLabs",
     role: "Software Engineering Intern",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 – Jun 2026",
     status: "Production",
     problem:
       "Organisations decide things, then quietly stop doing them. Nobody tracks the gap between what was agreed and what's actually happening on the ground.",
     approach:
-      "A multi-agent memory layer that wires our internal apps into one organisational knowledge graph, with a Decision Adherence Engine that cites and audits every strategic and operational decision the company makes.",
+      "A multi-agent memory layer that integrates internal applications into a shared organisational knowledge graph, so agents reason over consistent context. A decision-adherence component links operational actions to prior decisions and flags divergences. MCP servers with CRUD guardrails handle validation and access control across agent services.",
     outcome:
-      "The Drift Detection module compares live actions to recorded decisions at 99% accuracy in production. It's now the company's primary institutional memory, used daily by leadership and teams.",
+      "Shipped as an internal production system. Gives whoever owns agent oversight a concrete trust and accountability signal, and gives downstream teams an auditable communication backbone.",
     stack: ["Multi-Agent Architecture", "MCP Servers", "Knowledge Graph", "RAG", "PostgreSQL"],
   },
   {
     id: "multi-agent-rag",
-    number: "02",
+    number: "05",
     title: "Multi-Agent Retrieval-Augmented QA Framework",
     org: "Independent research",
     role: "Lead",
-    period: "Jul 2025 – Present",
-    status: "Research",
+    period: "Jul 2025 – Dec 2025",
+    status: "Completed",
     problem:
       "Single-model RAG can't grade its own homework. The same model picks the evidence and decides if the answer is good, so the failures are silent.",
     approach:
       "Separate the retrieval, reasoning, and evaluation roles into different agents. Add an autonomous judge and an RL loop so the system actually improves from its own mistakes instead of repeating them.",
     outcome:
-      "Currently under review at CLEF 2026. The judge-as-separate-agent design isolates failure modes that single-model RAG systematically hides.",
-    stack: ["Python", "LangChain", "FAISS", "LlamaIndex", "Hugging Face", "RL"],
+      "The judge-as-separate-agent design isolates failure modes that single-model RAG systematically hides, which is useful for teams building agentic QA systems where answers cannot be checked by hand at scale.",
+    stack: ["LangChain", "LlamaIndex", "Hugging Face", "FAISS", "RL"],
   },
   {
     id: "multilingual-rag",
-    number: "03",
-    title: "Multi-Agentic Multilingual RAG Analysis",
+    number: "06",
+    title: "When Retrieval Hurts: Multilingual RAG Analysis",
     org: "ACL 2026 · MeLLMs Workshop",
     role: "First author",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 – Apr 2026",
     status: "Published",
     problem:
       "Most RAG benchmarks are English-only. So when the same system gets shipped in Hindi or Swahili, the regressions go unmeasured.",
     approach:
-      "A custom metrics suite scoring six things at once: semantic alignment, factual grounding, cross-lingual robustness, hallucination rate, latency, retrieval precision. Run across multilingual datasets that English benchmarks ignore.",
+      "An empirical study of RAG across 21 typologically diverse languages and 5 LLMs, comparing RAG against a non-RAG baseline across five prompting strategies and multiple retrieval configurations. Introduces lightweight inference-time metrics that detect failure modes directly.",
     outcome:
-      "Accepted to the Workshop on Multilingual Large Language Models at ACL 2026. Surfaces script-fidelity and knowledge-conflict failures that English benchmarks systematically miss.",
+      "Accepted and presented at the Workshop on Multilingual Large Language Models at ACL 2026. High retrieval quality does not guarantee gains: models consistently underutilise retrieved evidence, and script fidelity is a key driver of hallucination in non-Latin-script languages.",
     stack: ["PyTorch", "Hugging Face", "FAISS", "LangChain", "ONNX Runtime"],
   },
   {
     id: "resiliency-graphs",
-    number: "04",
-    title: "Resiliency Graphs for Cyber-Physical Systems",
+    number: "07",
+    title: "Cyber-Physical Systems Security Platform",
     org: "Colorado State University",
     role: "Summer Research Intern · Patent Pending",
-    period: "Jun 2025 – Present",
+    period: "Jun 2025 – Jun 2026",
     status: "Patent Pending",
     problem:
       "Critical-infrastructure operators need to know how vulnerabilities chain together, not just where individual issues sit. Manual review doesn't scale to systems with hundreds of components.",
     approach:
-      "Fuse Attack Connection Graphs with Fault Trees, compile the result into PDDL, and let an AI planner reason about how risks propagate. With a human-in-the-loop UI for security teams who want to override the planner.",
+      "Fuse Attack Connection Graphs with Fault Trees, compile the result into PDDL, and let an AI planner reason about how risks propagate, with a human-in-the-loop process for CVE-based exploits. Separately, a network orchestration controller manages the full VM lifecycle (topology, networking, live access) for reproducible attack-defense scenarios. Worked with Prof. Indrajit Ray.",
     outcome:
-      "Patent pending. Gives security teams a structured way to prioritise risks across system layers, instead of reading CVE lists.",
-    stack: ["Python", "NetworkX", "PDDL", "AI Planning", "Graph Theory"],
+      "Patent pending. Gives security teams a structured way to prioritise risks across system layers, and gives researchers a reproducible, on-demand platform instead of hand-built test environments.",
+    stack: ["Python", "Flask", "VBoxManage", "paramiko", "NetworkX", "PDDL"],
   },
   {
     id: "digital-twin",
-    number: "05",
+    number: "08",
     title: "Digital Twin · Mushroom Cultivation",
     org: "Amrita Live-in-Labs",
-    role: "Lead · Patent Pending",
+    role: "Lead · Three Patents Filed",
     period: "Aug 2025 – Present",
     status: "Patent Pending",
     problem:
@@ -91,12 +138,12 @@ export const projects: Project[] = [
     approach:
       "A digital twin that mirrors the cultivation environment from live IoT sensors (temperature, humidity, soil moisture), automates irrigation and air control, and watches growth through a camera, with cloud sync so a remote agronomist can intervene.",
     outcome:
-      "Patent pending. Designed so the operator doesn't need to be an expert. The long-term goal is year-round cultivation across villages, turning a seasonal crop into a stable livelihood.",
+      "Three patent applications filed (digital twin framework, biological-state-aware environmental control, computer-vision phenotyping) and a published ICSRF 2025 paper. Designed so the operator doesn't need to be an expert. The long-term goal is year-round cultivation across villages, turning a seasonal crop into a stable livelihood.",
     stack: ["Python", "ESP32", "DHT22", "OpenCV", "AWS", "MQTT"],
   },
   {
     id: "physionet",
-    number: "06",
+    number: "09",
     title: "PhysioNet Challenge 2025 · Chagas Detection",
     org: "Health & AI Lab, Amrita",
     role: "Research Intern",
@@ -112,7 +159,7 @@ export const projects: Project[] = [
   },
   {
     id: "hyperspectral",
-    number: "07",
+    number: "10",
     title: "Hyperspectral Magnesium Estimation in Soil",
     org: "IEEE InGARSS 2024",
     role: "Co-author",
@@ -134,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     id: "quantum-wordle",
-    number: "08",
+    number: "11",
     title: "Quantum Wordle Solver",
     org: "Coursework · Quantum Computing",
     role: "Lead",
@@ -150,7 +197,7 @@ export const projects: Project[] = [
   },
   {
     id: "datacenter-scheduler",
-    number: "09",
+    number: "12",
     title: "AI-Driven Distributed Data-Center Scheduler",
     org: "Independent research",
     role: "Lead",
@@ -166,7 +213,7 @@ export const projects: Project[] = [
   },
   {
     id: "xss-detection",
-    number: "10",
+    number: "13",
     title: "XSS Website Vulnerability Detection",
     org: "Coursework",
     role: "Lead",

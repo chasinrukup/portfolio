@@ -15,12 +15,12 @@ export const ANCHORS: Record<AnchorId, { label: string; number: string; blurb: s
   currents: {
     label: "Research Currents",
     number: "02",
-    blurb: "Six research themes with open questions.",
+    blurb: "Seven research themes with open questions.",
   },
   work: {
     label: "Selected Work",
     number: "03",
-    blurb: "Ten project case studies with problem / approach / outcome.",
+    blurb: "Thirteen project case studies with problem / approach / outcome.",
   },
   publications: {
     label: "Publications",
@@ -30,7 +30,7 @@ export const ANCHORS: Record<AnchorId, { label: string; number: string; blurb: s
   journey: {
     label: "Journey",
     number: "05",
-    blurb: "Hairline timeline of milestones from 2018 to 2026.",
+    blurb: "Hairline timeline of milestones from 2018 to 2027.",
   },
   toolkit: {
     label: "Toolkit",
@@ -45,7 +45,7 @@ export const ANCHORS: Record<AnchorId, { label: string; number: string; blurb: s
   contact: {
     label: "Contact",
     number: "08",
-    blurb: "Email, LinkedIn, GitHub, resume download.",
+    blurb: "Email, LinkedIn, GitHub, CV download.",
   },
 };
 

@@ -7,24 +7,24 @@ export type NowItem = {
 
 export const nowItems: NowItem[] = [
   {
-    id: "decision-intel",
-    label: "Building · SeedlingLabs",
-    title: "Decision Adherence Engine v2",
+    id: "quantum-ec",
+    label: "Building · Amrita CCSN",
+    title: "AI pipeline for quantum error correction",
     detail:
-      "Extending the multi-agent memory layer so it spans longer decision horizons and surfaces conflicting commitments across teams before they compound.",
+      "MeitY-funded work on a Quantum Error Correction Appliance for superconducting qubits: noise estimation, syndrome processing, an adaptive decoder, and correction optimisation fed back to the control electronics.",
   },
   {
-    id: "multilingual-rag",
-    label: "Researching · ACL 2026",
-    title: "Multilingual RAG failure modes",
+    id: "prevalence",
+    label: "Building · Prevalence Health",
+    title: "Agentic workflows for clinical protocols",
     detail:
-      "Following up the MeLLMs paper with a deeper look at script-fidelity and knowledge-conflict regressions in low-resource languages.",
+      "Agent-driven systems that translate clinical study protocols into repeatable clinic operations, aimed at reducing protocol-deviation errors and freeing clinical staff time for patients.",
   },
   {
     id: "phd-apps",
-    label: "Reading · PhD prep",
-    title: "Agent memory & decision-aware reasoning",
+    label: "Applying · PhD 2027",
+    title: "Safe, human-aware LLM agents",
     detail:
-      "Catching up on current literature in agent memory, semantic alignment, and robust reasoning across languages and domains. Preparing 2026–27 doctoral applications.",
+      "Preparing doctoral applications for 2027 on agent decision-making, safe tool use, adversarial robustness, and human oversight and deferral.",
   },
 ];

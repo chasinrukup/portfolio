@@ -5,7 +5,7 @@ import RevealOnScroll from "../ui/RevealOnScroll";
 const LINKS = [
   { label: "LinkedIn", href: "https://linkedin.com/in/sachin-kurup", handle: "linkedin.com/in/sachin-kurup" },
   { label: "GitHub", href: "https://github.com/sachinkurup", handle: "github.com/sachinkurup" },
-  { label: "Resume", href: "/resume/Sachin-Kurup-CV.pdf", handle: "Sachin-Kurup-CV.pdf" },
+  { label: "CV", href: "/resume/Sachin-Kurup-CV.pdf", handle: "Sachin-Kurup-CV.pdf" },
 ];
 
 export default function Contact() {
@@ -52,7 +52,7 @@ export default function Contact() {
                     href={l.href}
                     target={l.href.startsWith("/") ? undefined : "_blank"}
                     rel={l.href.startsWith("/") ? undefined : "noopener noreferrer"}
-                    download={l.label === "Resume" ? "" : undefined}
+                    download={l.label === "CV" ? "" : undefined}
                     className="group flex items-center justify-between gap-4 py-4 transition-colors"
                   >
                     <span className="font-serif text-xl text-paper transition-colors group-hover:text-accent">

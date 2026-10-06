@@ -4,7 +4,7 @@ const SUGGESTIONS = [
   "Does he have production work experience?",
   "What's his research focus?",
   "Show me his publications",
-  "Is he available for PhD interviews?",
+  "Is he applying for a PhD in 2027?",
 ];
 
 export function SuggestedQuestions({ onPick }: { onPick: (q: string) => void }) {

@@ -14,33 +14,49 @@ const CV_MARKDOWN = `
 ## Contact
 - Email: ${site.email}
 - LinkedIn: ${site.linkedin}
-- Location: Bangalore, India · Singaporean national
+- Location: Bangalore, India · Singapore citizen
 - Resume PDF: ${site.resumeHref}
 - Availability: ${site.availability}
 
 ## Profile
 ${about.paragraphs.join("\n\n")}
 
+## Research focus
+Sachin is interested in autonomous language-based systems: how LLM agents reason and decide in complex environments, use external tools safely, resist adversarial manipulation, and judge when to act alone versus defer to human oversight. He has worked on this from both sides, building multi-agent systems with guardrailed tool access and decision-adherence checks, and studying failures empirically in his first-author work When Retrieval Hurts (MeLLMs @ ACL 2026). He is pursuing doctoral study to make agent reasoning reliable enough to support discovery in complex scientific and technical domains.
+
+## PhD plans
+Applying for PhD programmes starting in 2027.
+
 ## Research interests
-Multi-Agent AI Systems · Retrieval-Augmented Generation · Large Language Models · Computational Optimization · Cyber-Physical Systems Security · AI Planning & Graph Theory.
+Autonomous LLM agents and decision-making in complex environments · Safe tool use and adversarial robustness · Human oversight and deferral in agentic systems · Reliable reasoning for scientific and technical discovery · Grounding and evaluation of agentic and retrieval systems.
 
 ## Education
-- B.Tech. in Computer Science and Engineering, Amrita Vishwa Vidyapeetham, Kerala (expected June 2026). CGPA 8.62/10.0. Full scholarship under the Government of India "Study in India" program. Coursework includes Machine Learning, Artificial Intelligence, Quantum Computing, Database Systems, Algorithm Design, Distributed Systems.
+- B.Tech. in Computer Science and Engineering, Amrita Vishwa Vidyapeetham, Kerala (August 2026). CGPA 8.65/10.0. Full scholarship under the Government of India "Study in India" program. Coursework includes Artificial Intelligence, Machine Learning, Distributed Systems, Algorithm Design, Quantum Computing.
 
-## Research & professional experience
+## Patents filed
+- Scientific Digital Twin Framework for Biological State Estimation and Synchronization
+- Biological-State-Aware Autonomous Environmental Control System for Controlled Mushroom Cultivation
+- Computer Vision-Based Mushroom Phenotyping and Biological Health Assessment System
 
-### Software Engineering Intern · SeedlingLabs · Bangalore (Jan 2026 – Present)
-Two production systems shipped and in daily use:
-- **Decision Intelligence Agent (internal, production).** Designed and deployed a multi-agent memory layer that wires the company's internal applications into one organisational knowledge graph. Built a Decision Adherence Engine that tracks, cites, and audits every strategic and operational decision, and a Drift Detection module that compares live actions to recorded decisions at 99% accuracy in live production. Now used daily by leadership and teams.
-- **Agentic Educational Platform (live across multiple institutions).** Co-developed an agentic platform that automates the student-teacher-parent loop: AI-generated question papers, automated answer evaluation, personalised lesson-plan generation, real-time parent dashboard. Built MCP servers with CRUD guardrails for secure cross-application agent communication. In production at several under-resourced schools.
+## Research & engineering experience
 
-### Research Intern, Computational Cardiology · Health and AI Lab, Amrita University (Jan 2025 – Aug 2025)
-Applied transformer models and prompt engineering to ECG-based diagnostic classification of Chagas disease, plus epidemiological risk analysis across South American populations. Oriented toward making AI-assisted screening viable where specialist ECG interpretation is scarce.
+### Quantum Project Engineer · Center for Cybersecurity Systems and Networks, Amrita Vishwa Vidyapeetham (Oct 2026 – Present)
+MeitY-funded Quantum Error Correction Appliance for superconducting quantum computers on the Rudra Server. Building an AI pipeline that takes syndrome data from the readout and extraction stages and runs noise estimation, syndrome processing, an adaptive decoder, error prediction, and correction optimisation, passing decisions back to the control electronics.
+
+### Research Intern · Prevalence Health (Embrace Ventures) · California, USA (Jul 2026 – Present)
+Building agentic workflows and systems that translate clinical study protocols into reliable, repeatable clinic operations, working directly with the organisation's clinical and research leadership, to reduce protocol-deviation errors and free clinical staff time for patient care.
+
+### Software Engineering Intern · SeedlingLabs · Bangalore (Jan 2026 – Jun 2026)
+- **Agentic memory and decision-grounding (internal production system).** Built a multi-agent memory layer integrating internal applications into a shared organisational knowledge graph. Developed a decision-adherence component linking operational actions to prior decisions and flagging divergences. Designed MCP servers with CRUD guardrails for validation and access control.
+- **Agentic educational platform (institutional deployment).** Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning, deployed across partner institutions.
 
 ### Summer Research Intern · Colorado State University, Fort Collins (Jun 2025). Patent pending.
-Built an AI planning system that analyses Attack Connection Graphs and Fault Trees to identify vulnerability paths in cyber-physical systems. Also built an interactive human-in-the-loop application for attack-path identification and CVE-level breach detection across system layers.
+Developed an AI-planning system that analyses attack-connection graphs and fault trees to identify vulnerability paths in cyber-physical systems, with a human-in-the-loop process for reasoning over CVE-based exploits.
 
-### National Service · Singapore Armed Forces (Oct 2020 – Oct 2022)
+### Research Intern, Computational Cardiology · Health and AI Lab, Amrita University (Jan 2025 – Aug 2025)
+Applied transformer architectures and prompt engineering to ECG-based classification of Chagas disease, benchmarking hybrid sequence models (best: LSTM-Transformer) for the PhysioNet 2025 Challenge.
+
+### National Service · Singapore Armed Forces (2020 – 2022)
 Mandatory two-year service. Leadership, team coordination, operational decision-making under pressure.
 
 ## Publications (IEEE-style)
@@ -98,7 +114,7 @@ ${nowItems
 
 ## Leadership & service
 - Live-in-Labs field immersion in rural North India: structured needs assessments, co-design of sustainable interventions in education and healthcare, ongoing rather than a one-off trip.
-- Student Social Responsibility: curriculum-based STEM workshops for underprivileged students (Aug – Nov 2024).
+- Student Social Responsibility (2024): designed and taught STEM workshops for underprivileged students.
 - Head Prefect, Amrita Vidyalayam, Kollam (2018–2020): led the student body, organised school-wide events, mentored juniors.
 `.trim();
 

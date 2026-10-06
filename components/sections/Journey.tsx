@@ -138,7 +138,7 @@ export default function Journey() {
         }}
       />
 
-      <SectionHeader number="05" label="Journey" kicker="2018 → 2026" />
+      <SectionHeader number="05" label="Journey" kicker="2018 → 2027" />
 
       <ol className="relative mt-16 flex flex-col">
         {milestones.map((m, i) => {

@@ -9,8 +9,23 @@ export type Current = {
 
 export const currents: Current[] = [
   {
-    id: "multi-agent",
+    id: "agent-safety",
     number: "01",
+    title: "Safe, Human-Aware LLM Agents",
+    shortLine:
+      "How agents decide in complex environments, use external tools safely, resist adversarial manipulation, and know when to defer to a human.",
+    openQuestions: [
+      "How should an agent judge when to act alone and when to defer to human oversight?",
+      "What guardrails on tool access (validation, access control, audit) hold up against adversarial manipulation?",
+    ],
+    related: [
+      { kind: "project", id: "decision-intelligence", label: "Decision Intelligence Agent" },
+      { kind: "project", id: "clinical-protocol-agents", label: "Agentic Clinical-Protocol Workflows" },
+    ],
+  },
+  {
+    id: "multi-agent",
+    number: "02",
     title: "Multi-Agent AI Systems",
     shortLine:
       "How separate agents coordinate, remember, and audit each other without collapsing into one model's blind spots.",
@@ -25,7 +40,7 @@ export const currents: Current[] = [
   },
   {
     id: "rag",
-    number: "02",
+    number: "03",
     title: "Retrieval-Augmented Generation",
     shortLine:
       "Where the retriever helps, where it hurts, and how to measure the difference honestly across languages.",
@@ -35,12 +50,12 @@ export const currents: Current[] = [
     ],
     related: [
       { kind: "paper", id: "mellms-acl-2026", label: "When Retrieval Hurts (ACL 2026)" },
-      { kind: "project", id: "multilingual-rag", label: "Multilingual RAG Analysis" },
+      { kind: "project", id: "multilingual-rag", label: "When Retrieval Hurts: Multilingual RAG" },
     ],
   },
   {
     id: "llms",
-    number: "03",
+    number: "04",
     title: "Large Language Models",
     shortLine:
       "Behaviour under domain shift, low-resource settings, and adversarial inputs. Not just leaderboard scores.",
@@ -54,7 +69,7 @@ export const currents: Current[] = [
   },
   {
     id: "optimisation",
-    number: "04",
+    number: "05",
     title: "Computational Optimization",
     shortLine:
       "RL and constraint reasoning applied to scheduling problems where being wrong has physical consequences.",
@@ -68,7 +83,7 @@ export const currents: Current[] = [
   },
   {
     id: "cps-security",
-    number: "05",
+    number: "06",
     title: "Cyber-Physical Systems Security",
     shortLine:
       "Modelling how attack paths and failure modes combine in systems where a breach has physical consequences.",
@@ -83,7 +98,7 @@ export const currents: Current[] = [
   },
   {
     id: "planning",
-    number: "06",
+    number: "07",
     title: "AI Planning & Graph Theory",
     shortLine:
       "Symbolic planning (PDDL) and graph reasoning as a structured complement to learned policies. Neither alone is enough.",

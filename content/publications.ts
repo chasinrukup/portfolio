@@ -16,11 +16,12 @@ export const publications: Publication[] = [
   {
     id: "mellms-acl-2026",
     status: "Accepted",
-    authors: "S. Kurup et al.",
+    authors: "S. Kurup, G. Menon, Varalekshmy, Swathi, V. Kangirangat, Veena",
     title:
       "When Retrieval Hurts: Evidence Utilization, Script Fidelity, and Knowledge Conflicts in Multilingual RAG",
     venue: "Workshop on Multilingual Large Language Models (MeLLMs) @ ACL 2026",
     year: 2026,
+    note: "Presented",
   },
   {
     id: "ingarss-2024",
@@ -36,36 +37,29 @@ export const publications: Publication[] = [
   {
     id: "icsrf-2025",
     status: "Published",
-    authors: "S. Kurup et al.",
+    authors:
+      "S. Kurup, Lakshmi K, Arunav H, V. S. T. Sunku, C. V. S. S. Anish, Dhivvya J P, R. Mohan",
     title: "Digital Twin Framework for Precision Mushroom Cultivation Using IoT Sensors",
     venue: "Proc. International Conference on Sustainable & Resilient Futures (ICSRF)",
     year: 2025,
-    note: "Accepted for publication",
+    note: "Patent pending",
   },
   {
     id: "clef-2026",
-    status: "Under Review",
-    authors: "S. Kurup et al.",
+    status: "Accepted",
+    authors: "S. Kurup, G. Menon, Varalekshmy, Swathi, V. Kangirangat, Veena",
     title:
-      "Multi-Agentic Retrieval-Augmented Generation: A Comparative Framework for Question Answering Systems",
+      "Scope Matters: A Hallucination-Aware Evaluation of Retrieval Strategies for Multilingual RAG",
     venue: "CLEF 2026",
     year: 2026,
+    note: "Presented",
   },
   {
     id: "icdmit-2026",
     status: "In Preparation",
-    authors: "S. Kurup et al.",
+    authors: "S. Kurup, Lakshmi K., R. Mohan",
     title: "Advanced Control Systems for Digital Twin-Based Mushroom Cultivation: Part II",
-    venue: "International Conference on Digital Management and Information Technology",
-    year: 2026,
-  },
-  {
-    id: "multilingual-rag-eval",
-    status: "In Preparation",
-    authors: "S. Kurup et al.",
-    title:
-      "Multilingual RAG Performance Analysis: Evaluation Metrics for Cross-Lingual Robustness in Low-Resource Languages",
-    venue: "Manuscript in preparation",
+    venue: "In preparation",
     year: 2026,
   },
 ];
