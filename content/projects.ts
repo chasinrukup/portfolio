@@ -40,7 +40,7 @@ export const projects: Project[] = [
     problem:
       "Clinics running structured studies often lack the infrastructure to operationalise protocols consistently at scale.",
     approach:
-      "Building agentic workflows and systems that translate clinical study protocols into reliable, repeatable clinic operations, working directly with the organisation's clinical and research leadership.",
+      "Building agentic workflows that turn clinical study protocols into repeatable clinic operations for partner clinics of one client, working with clinical and research leadership. Run across 1,000 protocols.",
     outcome:
       "In progress. Aimed at reducing protocol-deviation errors and freeing clinical staff time for patient care.",
     stack: ["LLM Agents", "Workflow Automation", "Human Oversight"],
@@ -56,9 +56,9 @@ export const projects: Project[] = [
     problem:
       "Manual grading, question-paper creation, and lesson planning consume significant instructor time at scale.",
     approach:
-      "Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning (system design, prompting, and backend integration).",
+      "Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning (system design, prompting, and backend integration). Also automated ~7,000 test cases (~700 hours of manual testing) on the LeadSquared platform using agent-driven workflows and TypeScript.",
     outcome:
-      "Deployed across partner institutions, reducing manual workload for instructors and administrators.",
+      "Deployed for 2 institutional clients, on a platform used by ~5,000 to 10,000 students, reducing manual grading and planning load for instructors.",
     stack: ["LLM Agents", "Prompt Engineering", "Backend Integration"],
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     problem:
       "Organisations decide things, then quietly stop doing them. Nobody tracks the gap between what was agreed and what's actually happening on the ground.",
     approach:
-      "A multi-agent memory layer that integrates internal applications into a shared organisational knowledge graph, so agents reason over consistent context. A decision-adherence component links operational actions to prior decisions and flags divergences. MCP servers with CRUD guardrails handle validation and access control across agent services.",
+      "A multi-agent memory layer that integrates 7 internal applications into a shared organisational knowledge graph, so agents reason over consistent context. A decision-adherence component links operational actions to prior decisions and flags divergences. MCP servers with CRUD guardrails handle validation and access control across agent services.",
     outcome:
       "Shipped as an internal production system. Gives whoever owns agent oversight a concrete trust and accountability signal, and gives downstream teams an auditable communication backbone.",
     stack: ["Multi-Agent Architecture", "MCP Servers", "Knowledge Graph", "RAG", "PostgreSQL"],
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     id: "multilingual-rag",
     number: "06",
     title: "When Retrieval Hurts: Multilingual RAG Analysis",
-    org: "ACL 2026 · MeLLMs Workshop",
+    org: "MeLLM 2026 · ACL",
     role: "First author",
     period: "Jan 2026 – Apr 2026",
     status: "Published",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     approach:
       "An empirical study of RAG across 21 typologically diverse languages and 5 LLMs, comparing RAG against a non-RAG baseline across five prompting strategies and multiple retrieval configurations. Introduces lightweight inference-time metrics that detect failure modes directly.",
     outcome:
-      "Accepted and presented at the Workshop on Multilingual Large Language Models at ACL 2026. High retrieval quality does not guarantee gains: models consistently underutilise retrieved evidence, and script fidelity is a key driver of hallucination in non-Latin-script languages.",
+      "Published in the proceedings of the 1st Workshop on Multilinguality in the Era of LLMs (MeLLM 2026), ACL. High retrieval quality does not guarantee gains: models consistently underutilise retrieved evidence, and script fidelity is a key driver of hallucination in non-Latin-script languages.",
     stack: ["PyTorch", "Hugging Face", "FAISS", "LangChain", "ONNX Runtime"],
   },
   {
@@ -114,15 +114,15 @@ export const projects: Project[] = [
     number: "07",
     title: "Cyber-Physical Systems Security Platform",
     org: "Colorado State University",
-    role: "Summer Research Intern · Patent Pending",
+    role: "Summer Research Intern",
     period: "Jun 2025 – Jun 2026",
-    status: "Patent Pending",
+    status: "Research",
     problem:
       "Critical-infrastructure operators need to know how vulnerabilities chain together, not just where individual issues sit. Manual review doesn't scale to systems with hundreds of components.",
     approach:
       "Fuse Attack Connection Graphs with Fault Trees, compile the result into PDDL, and let an AI planner reason about how risks propagate, with a human-in-the-loop process for CVE-based exploits. Separately, a network orchestration controller manages the full VM lifecycle (topology, networking, live access) for reproducible attack-defense scenarios. Worked with Prof. Indrajit Ray.",
     outcome:
-      "Patent pending. Gives security teams a structured way to prioritise risks across system layers, and gives researchers a reproducible, on-demand platform instead of hand-built test environments.",
+      "Gives security teams a structured way to prioritise risks across system layers, and gives researchers a reproducible, on-demand platform instead of hand-built test environments.",
     stack: ["Python", "Flask", "VBoxManage", "paramiko", "NetworkX", "PDDL"],
   },
   {
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     approach:
       "A digital twin that mirrors the cultivation environment from live IoT sensors (temperature, humidity, soil moisture), automates irrigation and air control, and watches growth through a camera, with cloud sync so a remote agronomist can intervene.",
     outcome:
-      "Three patent applications filed (digital twin framework, biological-state-aware environmental control, computer-vision phenotyping) and a published ICSRF 2025 paper. Designed so the operator doesn't need to be an expert. The long-term goal is year-round cultivation across villages, turning a seasonal crop into a stable livelihood.",
+      "Three patent applications filed in Sep 2026 with the Indian Patent Office (digital twin framework, biological-state-aware environmental control, computer-vision phenotyping) and a published ICSRF 2025 paper. Designed so the operator doesn't need to be an expert. The long-term goal is year-round cultivation across villages, turning a seasonal crop into a stable livelihood.",
     stack: ["Python", "ESP32", "DHT22", "OpenCV", "AWS", "MQTT"],
   },
   {
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     approach:
       "Trained and compared seven architectures (1D-CNN, ResNet, LSTM, R-LSTM, LSTM-Transformer, 1D-CNN-Transformer, encoder-decoder) on Chagas classification from ECG signals.",
     outcome:
-      "The hybrid LSTM-Transformer won on accuracy while staying small enough to deploy on the kind of hardware these clinics actually have.",
+      "The hybrid LSTM-Transformer was the best model (86.2% challenge score) while staying small enough to deploy on the kind of hardware these clinics actually have.",
     stack: ["Python", "TensorFlow", "WFDB", "SciPy", "Transformer", "LSTM"],
   },
   {

@@ -2,14 +2,6 @@ import { projects, type Project } from "@/content/projects";
 import SectionHeader from "../ui/SectionHeader";
 import ProjectCard from "../ui/ProjectCard";
 
-const STATUS_TIER: Record<Project["status"], number> = {
-  Published: 0,
-  "Patent Pending": 1,
-  Production: 2,
-  Research: 3,
-  Completed: 4,
-};
-
 function periodStart(p: Project): number {
   const match = p.period.match(/([A-Z][a-z]{2})\s+(\d{4})/);
   if (!match) return 0;
@@ -19,11 +11,17 @@ function periodStart(p: Project): number {
   return y * 12 + m;
 }
 
-const sortedProjects = [...projects].sort((a, b) => {
-  const tier = STATUS_TIER[a.status] - STATUS_TIER[b.status];
-  if (tier !== 0) return tier;
-  return periodStart(b) - periodStart(a);
-});
+function periodEnd(p: Project): number {
+  if (/present/i.test(p.period)) return Infinity;
+  const matches = [...p.period.matchAll(/([A-Z][a-z]{2})\s+(\d{4})/g)];
+  const last = matches[matches.length - 1];
+  return last ? periodStart({ ...p, period: last[0] }) : 0;
+}
+
+// Most recent first: by start date, then ongoing / latest-ending first.
+const sortedProjects = [...projects]
+  .sort((a, b) => periodStart(b) - periodStart(a) || periodEnd(b) - periodEnd(a))
+  .map((p, i) => ({ ...p, number: String(i + 1).padStart(2, "0") }));
 
 export default function SelectedWork() {
   return (

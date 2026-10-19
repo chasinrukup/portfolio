@@ -49,7 +49,7 @@ export const currents: Current[] = [
       "What does a benchmark look like that doesn't pretend English performance generalises?",
     ],
     related: [
-      { kind: "paper", id: "mellms-acl-2026", label: "When Retrieval Hurts (ACL 2026)" },
+      { kind: "paper", id: "mellms-acl-2026", label: "When Retrieval Hurts (MeLLM 2026)" },
       { kind: "project", id: "multilingual-rag", label: "When Retrieval Hurts: Multilingual RAG" },
     ],
   },

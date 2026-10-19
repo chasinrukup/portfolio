@@ -34,6 +34,7 @@ Autonomous LLM agents and decision-making in complex environments · Safe tool u
 - B.Tech. in Computer Science and Engineering, Amrita Vishwa Vidyapeetham, Kerala (August 2026). CGPA 8.65/10.0. Full scholarship under the Government of India "Study in India" program. Coursework includes Artificial Intelligence, Machine Learning, Distributed Systems, Algorithm Design, Quantum Computing.
 
 ## Patents filed
+Inventors on all three: Sachin Kurup (first inventor), Lakshmi K, Renjith Mohan, Maneesha Sudheer. Filed Sep 2026, Indian Patent Office; application numbers awaited.
 - Scientific Digital Twin Framework for Biological State Estimation and Synchronization
 - Biological-State-Aware Autonomous Environmental Control System for Controlled Mushroom Cultivation
 - Computer Vision-Based Mushroom Phenotyping and Biological Health Assessment System
@@ -44,17 +45,18 @@ Autonomous LLM agents and decision-making in complex environments · Safe tool u
 MeitY-funded Quantum Error Correction Appliance for superconducting quantum computers on the Rudra Server. Building an AI pipeline that takes syndrome data from the readout and extraction stages and runs noise estimation, syndrome processing, an adaptive decoder, error prediction, and correction optimisation, passing decisions back to the control electronics.
 
 ### Research Intern · Prevalence Health (Embrace Ventures) · California, USA (Jul 2026 – Present)
-Building agentic workflows and systems that translate clinical study protocols into reliable, repeatable clinic operations, working directly with the organisation's clinical and research leadership, to reduce protocol-deviation errors and free clinical staff time for patient care.
+Building agentic workflows that turn clinical study protocols into repeatable clinic operations, to cut protocol-deviation errors and free clinical staff time, for partner clinics of one client; run across 1,000 protocols, with clinical and research leadership.
 
 ### Software Engineering Intern · SeedlingLabs · Bangalore (Jan 2026 – Jun 2026)
-- **Agentic memory and decision-grounding (internal production system).** Built a multi-agent memory layer integrating internal applications into a shared organisational knowledge graph. Developed a decision-adherence component linking operational actions to prior decisions and flagging divergences. Designed MCP servers with CRUD guardrails for validation and access control.
-- **Agentic educational platform (institutional deployment).** Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning, deployed across partner institutions.
+- **Agentic memory and decision-grounding (internal production system).** Built a multi-agent memory layer integrating 7 internal applications into a shared organisational knowledge graph. Developed a decision-adherence component linking operational actions to prior decisions and flagging divergences. Designed MCP servers with CRUD guardrails for validation and access control.
+- **Agentic educational platform (institutional deployment).** Co-developed agentic pipelines for automated answer-script evaluation, question-paper generation, and personalised lesson planning, for instructors at 2 institutional clients; platform used by ~5,000 to 10,000 students.
+- **Test automation.** Automated ~7,000 test cases (~700 hours of manual testing) with the team, using agent-driven workflows and TypeScript test cases on the LeadSquared platform.
 
-### Summer Research Intern · Colorado State University, Fort Collins (Jun 2025). Patent pending.
-Developed an AI-planning system that analyses attack-connection graphs and fault trees to identify vulnerability paths in cyber-physical systems, with a human-in-the-loop process for reasoning over CVE-based exploits.
+### Summer Research Intern · Colorado State University, Fort Collins (Jun 2025)
+Developed an AI-planning system that analyses attack-connection graphs and fault trees to identify vulnerability paths in cyber-physical systems, with a human-in-the-loop process for reasoning over CVE-based exploits, for critical-infrastructure defenders and Prof. Indrajit Ray's research group.
 
 ### Research Intern, Computational Cardiology · Health and AI Lab, Amrita University (Jan 2025 – Aug 2025)
-Applied transformer architectures and prompt engineering to ECG-based classification of Chagas disease, benchmarking hybrid sequence models (best: LSTM-Transformer) for the PhysioNet 2025 Challenge.
+Applied transformer architectures and prompt engineering to ECG-based classification of Chagas disease, benchmarking hybrid sequence models (best: LSTM-Transformer; 86.2% challenge score) for the PhysioNet 2025 Challenge.
 
 ### National Service · Singapore Armed Forces (2020 – 2022)
 Mandatory two-year service. Leadership, team coordination, operational decision-making under pressure.

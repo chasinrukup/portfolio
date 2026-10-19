@@ -25,7 +25,7 @@ export const ANCHORS: Record<AnchorId, { label: string; number: string; blurb: s
   publications: {
     label: "Publications",
     number: "04",
-    blurb: "Accepted, published, under review, and in-preparation papers.",
+    blurb: "Published and in-preparation papers.",
   },
   journey: {
     label: "Journey",
