@@ -19,7 +19,7 @@ export const projects: Project[] = [
     number: "01",
     title: "AI Pipeline for Quantum Error Correction",
     org: "Amrita CCSN · MeitY-funded",
-    role: "Quantum Project Engineer",
+    role: "Senior Research Fellow (SRF)",
     period: "Oct 2026 – Present",
     status: "Research",
     problem:

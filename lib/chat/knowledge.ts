@@ -41,7 +41,7 @@ Inventors on all three: Sachin Kurup (first inventor), Lakshmi K, Renjith Mohan,
 
 ## Research & engineering experience
 
-### Quantum Project Engineer · Center for Cybersecurity Systems and Networks, Amrita Vishwa Vidyapeetham (Oct 2026 – Present)
+### Senior Research Fellow (SRF) · Center for Cybersecurity Systems and Networks, Amrita Vishwa Vidyapeetham (Oct 2026 – Present)
 MeitY-funded Quantum Error Correction Appliance for superconducting quantum computers on the Rudra Server. Building an AI pipeline that takes syndrome data from the readout and extraction stages and runs noise estimation, syndrome processing, an adaptive decoder, error prediction, and correction optimisation, passing decisions back to the control electronics.
 
 ### Research Intern · Prevalence Health (Embrace Ventures) · California, USA (Jul 2026 – Present)

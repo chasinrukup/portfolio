@@ -114,7 +114,7 @@ export const milestones: Milestone[] = [
   {
     id: "quantum-ec",
     year: "Oct 2026 – Present",
-    title: "Quantum Project Engineer · Amrita CCSN",
+    title: "Senior Research Fellow (SRF) · Amrita CCSN",
     context:
       "MeitY-funded Quantum Error Correction Appliance for superconducting quantum computers on the Rudra Server. Building an AI pipeline for noise estimation, adaptive decoding, and correction optimisation.",
     kind: "research",
